@@ -1,12 +1,15 @@
 package cmd
 
 import (
+	"HB_Task/domain/entity"
 	"HB_Task/infrastructure/auth"
 	"HB_Task/presentation"
 	"net/http"
 )
 
 func Run() {
+	entity.CreateDb()
+	entity.DbMigration()
 
 	http.HandleFunc("/", presentation.GetAllEndpoints)        // For endpoints
 	http.HandleFunc("/get-access-token", auth.GetAccessToken) // For access token
