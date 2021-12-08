@@ -1,0 +1,139 @@
+{
+  "Status": "200",
+  "Host": "localhost",
+  "Port": "8080",
+  "GetStart Endpoints": [
+    {
+      "Endpoint": "/",
+      "Method": "GET",
+      "Description": "Get all endpoint for this api",
+      "How to Use": "It can be used by sending a get request to the endpoint.",
+      "Example Request": "curl http://localhost:8080/"
+    },
+    {
+      "Endpoint": "/get-access-token",
+      "Method": "GET",
+      "Description": "Endpoint that allows us to get access token.",
+      "How to Use": "The token will allow access to other endpoints for 30 minutes. To use the token, you need to add `Token:{your_access_token}` as a key-value in the header.",
+      "Example Request": "curl http://localhost:8080/get-access-token"
+    }
+  ],
+  "Campaign Endpoints": [
+    {
+      "Endpoint": "/get_all_campaigns",
+      "Method": "GET",
+      "Description": "Endpoint that allows us to get all campaigns.",
+      "How to Use": "It can be used by sending a get request to the endpoint.",
+      "Example Request": "curl http://localhost:8080/get_all_campaigns"
+    },
+    {
+      "Endpoint": "/get_campaign_info",
+      "Method": "GET",
+      "Description": "Endpoint that allows us to get campaign with name parameter",
+      "How to Use": "It can be used by sending a get request to the endpoint.",
+      "Example Request": "curl http://localhost:8080/get_campaign_info?name={your_campaign_name}"
+    },
+    {
+      "Endpoint": "/create_campaign",
+      "Method": "POST",
+      "Description": "Endpoint that allows us to create new campaign.",
+      "How to Use": "It can be used by sending a post request to the endpoint.",
+      "Example Request": "curl http://localhost:8080/create_campaign -H 'Content-Type: application/json' -d '{\"ProductCode\": \"P3\",\"CampaignName\": \"C1\",\"Duration\": \"3\",\"PriceManupulationLimit\": \"0.1\",\"AverageItemPrice\": \"250\",\"TargetSalesCount\": \"150\",\"Turnover\": \"\",\"Status\": false}'"
+    },
+    {
+      "Endpoint": "/update_campaign",
+      "Method": "Post",
+      "Description": "Endpoint that allows us to update campaign",
+      "How to Use": "It can be used by sending a get request to the endpoint.",
+      "Example Request": "curl http://localhost:8080/update_campaign -H 'Content-Type: application/json' -d '{\"ProductCode\": \"P1\",\"CampaignName\": \"C1\",\"Duration\": \"3\",\"PriceManupulationLimit\": \"0.1\",\"AverageItemPrice\": \"250\",\"TargetSalesCount\": \"150\",\"Turnover\": \"\",\"Status\": false}'"
+    },
+    {
+      "Endpoint": "/increase_time",
+      "Method": "POST",
+      "Description": "Endpoint that allows us to add hour on campaigns duration",
+      "How to Use": "It can be used by sending a get request to the endpoint.",
+      "Example Request": "curl -X POST  http://localhost:8080/increase_time?hour=2"
+    },
+    {
+      "Endpoint": "/delete_campaign",
+      "Method": "POST",
+      "Description": "Endpoint that allows us to delete campaign.",
+      "How to Use": "It can be used by sending a get request to the endpoint.",
+      "Example Request": "curl -X POST  http://localhost:8080/delete_campaign?name={your_campaign_name}"
+    }
+  ],
+  "Product Endpoints": [
+    {
+      "Endpoint": "/get_all_products",
+      "Method": "GET",
+      "Description": "Endpoint that allows us to get all products.",
+      "How to Use": "It can be used by sending a get request to the endpoint.",
+      "Example Request": "curl http://localhost:8080/get_all_products"
+    },
+    {
+      "Endpoint": "/get_product_info",
+      "Method": "GET",
+      "Description": "Endpoint that allows us to get product with product code parameter",
+      "How to Use": "It can be used by sending a get request to the endpoint.",
+      "Example Request": "curl http://localhost:8080/get_product_info?code={your_product_code}"
+    },
+    {
+      "Endpoint": "/create_product",
+      "Method": "POST",
+      "Description": "Endpoint that allows us to create new product.",
+      "How to Use": "It can be used by sending a post request to the endpoint.",
+      "Example Request": "curl http://localhost:8080/create_product -H 'Content-Type: application/json' -d '{\"ProductCode\": \"P1\",\"ProductName\": \"Product One\",\"Price\": \"5\",\"Stock\": \"3000\"}'"
+    },
+    {
+      "Endpoint": "/update_product",
+      "Method": "Post",
+      "Description": "Endpoint that allows us to update product",
+      "How to Use": "It can be used by sending a get request to the endpoint.",
+      "Example Request": "curl http://localhost:8080/update_product -H 'Content-Type: application/json' -d '{\"ProductCode\": \"P1\",\"ProductName\": \"Product One\",\"Price\": \"3\",\"Stock\": \"1000\"}'"
+    },
+    {
+      "Endpoint": "/delete_product",
+      "Method": "POST",
+      "Description": "Endpoint that allows us to delete product.",
+      "How to Use": "It can be used by sending a get request to the endpoint.",
+      "Example Request": "curl -X POST  http://localhost:8080/delete_product?code={your_product_code}"
+    }
+  ],
+  "Order Endpoints": [
+    {
+      "Endpoint": "/get_all_orders",
+      "Method": "GET",
+      "Description": "Endpoint that allows us to get all orders.",
+      "How to Use": "It can be used by sending a get request to the endpoint.",
+      "Example Request": "curl http://localhost:8080/get_all_orders"
+    },
+    {
+      "Endpoint": "/get_product_info",
+      "Method": "GET",
+      "Description": "Endpoint that allows us to get order with product code parameter",
+      "How to Use": "It can be used by sending a get request to the endpoint.",
+      "Example Request": "curl http://localhost:8080/get_order_info?code={your_product_code}"
+    },
+    {
+      "Endpoint": "/create_order",
+      "Method": "POST",
+      "Description": "Endpoint that allows us to create new order.",
+      "How to Use": "It can be used by sending a post request to the endpoint.",
+      "Example Request": "curl http://localhost:8080/create_order -H 'Content-Type: application/json' -d '{\"ProductCode\": \"P1\",\"Quantity\": \"15\",\"TotalPrice\": \"45\"}'"
+    },
+    {
+      "Endpoint": "/update_order",
+      "Method": "Post",
+      "Description": "Endpoint that allows us to update order",
+      "How to Use": "It can be used by sending a get request to the endpoint.",
+      "Example Request": "curl http://localhost:8080/update_order -H 'Content-Type: application/json' -d '{\"ProductCode\": \"P1\",\"Quantity\": \"25\",\"TotalPrice\": \"75\"}'"
+    },
+    {
+      "Endpoint": "/delete_order",
+      "Method": "POST",
+      "Description": "Endpoint that allows us to delete order.",
+      "How to Use": "It can be used by sending a get request to the endpoint.",
+      "Example Request": "curl -X POST  http://localhost:8080/delete_order?code={your_product_code}"
+    }
+  ]
+}
